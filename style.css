@@ -223,6 +223,56 @@ footer i:hover {
 	text-decoration: underline solid var(--star-icon);
 }
 
+.countdown-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	place-items: center;
+	place-self: center;
+	gap: 2rem;
+	padding: 2rem 4rem;
+}
+
+.countdown {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 50%;
+	border: 3px solid var(--border-color);
+	background-color: var(--review-color);
+	width: 200px;
+	height: 200px;
+}
+
+.countdown h1 {
+	font-size: 4rem;
+	color: var(--secondary-color);
+}
+
+.secret-header {
+	padding: 2rem;
+	text-align: center;
+	color: var(--secondary-color);
+}
+
+.secret a {
+	opacity: 0.03;
+	color: #fff;
+	text-decoration: none;
+	transition: var(--tran05);
+}
+
+.secret a:hover {
+	opacity: 0.1;
+}
+
+@media (max-width: 1000px) {
+	.countdown-container {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 2rem 8rem;
+	}
+}
+
 @media (max-width: 768px) {
 	.card-container {
 		grid-template-columns: repeat(2, 1fr);
@@ -235,6 +285,10 @@ footer i:hover {
 	}
 
 	.review-container {
+		grid-template-columns: 1fr;
+	}
+
+	.countdown-container {
 		grid-template-columns: 1fr;
 	}
 }
