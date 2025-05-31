@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Mulish", sans-serif;
+}
+
+:root {
+	--bg-color: #fff;
+	--review-color: #fff;
+	--text-color: hsl(0, 0%, 40%);
+	--primary-color: #123;
+	--secondary-color: #08306b;
+	--hero-text-color: hsl(0, 0%, 70%);
+	--hero-heading-color: #fff;
+	--footer-primary: #12377d;
+	--footer-secondary: #009dd1;
+	--border-color: hsl(0, 0%, 90%);
+	--footer-i-hover: hsl(0, 0%, 90%);
+	--star-icon: #12377d;
+	--general-color: #000000;
+
+    --tran01: all 0.1s ease;
+    --tran02: all 0.2s ease;
+    --tran03: all 0.3s ease;
+    --tran04: all 0.4s ease;
+    --tran05: all 0.5s ease;
+}
+
+body.dark {
+	--bg-color: hsl(0, 0%, 9%);
+	--review-color: hsl(0, 0%, 12%);
+	--text-color: hsl(0, 0%, 70%);
+	--primary-color: #123;
+	--secondary-color: #08306b;
+	--hero-text-color: hsl(0, 0%, 70%);
+	--hero-heading-color: #fff;
+	--footer-primary: #12377d;
+	--footer-secondary: #009dd1;
+	--border-color: hsl(0, 0%, 25%);
+	--footer-i-hover: hsl(0, 0%, 90%);
+	--star-icon: #009dd1;
+	--general-color: #fff;
+
+    --tran01: all 0.1s ease;
+    --tran02: all 0.2s ease;
+    --tran03: all 0.3s ease;
+    --tran04: all 0.4s ease;
+    --tran05: all 0.5s ease;
+}
+
+.mode-container {
+	position: fixed;
+	margin-left: 20;
+	margin-top: 20;
+}
+
+.mode-container i {
+	font-size: 1.75rem;
+	background-color: var(--secondary-color);
+	color: var(--hero-heading-color);
+	padding: 0.5rem;
+	border-radius: 50%;
+	cursor: pointer;
+	border: 1px solid hsl(240, 50%, 40%);
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: var(--bg-color);
+  flex: 1;
+}
+
+main {
+  flex: 1;
+}
+
+p {
+	color: var(--text-color);
+}
+
+.hero {
+	text-align: center;
+	padding: 30px;
+	background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.hero h1 {
+	font-size: 2rem;
+	color: var(--hero-heading-color);
+}
+
+.hero h2 {
+	color: var(--hero-text-color);
+	font-size: 1.25rem;
+}
+
+.card-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	padding: 10px;
+}
+
+.card {
+	padding: 10px;
+	text-align: center;
+	border-radius: 6px;
+}
+
+.card h2 {
+	color: var(--general-color);
+}
+
+.card p {
+	margin-top: 0.3rem;
+}
+
+.image-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	place-items: center;
+	gap: 5px;
+	padding: 0.6rem;
+}
+
+.image-container img {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	border-radius: 6px;
+	max-width: 500px;
+}
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 3rem;
+	background-image: linear-gradient(to right, var(--footer-primary), var(--footer-secondary));
+}
+
+footer .footer-section {
+	text-align: center;
+}
+
+footer h3 {
+	font-size: 14px;
+	color: var(--hero-heading-color);
+}
+
+footer i {
+	font-size: 1.5rem;
+	margin-top: 0.5rem;
+	padding: 7px;
+	border-radius: 50%;
+	color: var(--hero-heading-color);
+	transition: var(--tran05);
+}
+
+footer i:hover {
+	background: var(--secondary-color);
+	color: var(--footer-i-hover);
+}
+
+.photo-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 1.5rem;
+	cursor: pointer;
+	margin-bottom: 0.5rem;
+	color: var(--general-color);
+}
+
+.photo-toggle i {
+	font-size: 2.3rem;
+}
+
+.image-container.close {
+	display: none;
+}
+
+.review-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	padding: 10px;
+}
+
+.review {
+	text-align: center;
+	background-color: var(--review-color);
+	border: 1px solid var(--border-color);
+	padding: 10px;
+	border-radius: 6px;
+}
+
+.review h3 {
+	margin-top: 0.3rem;
+	color: var(--general-color);
+}
+
+.rating i {
+	font-size: 1.2rem;
+	color: var(--star-icon);
+}
+
+.tip-of-the-day {
+	text-align: center;
+	padding: 20px;
+}
+
+.tip-of-the-day h2 {
+	color: var(--general-color);
+	text-decoration: underline solid var(--star-icon);
+}
+
+@media (max-width: 768px) {
+	.card-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	footer {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+
+	.review-container {
+		grid-template-columns: 1fr;
+	}
+}
