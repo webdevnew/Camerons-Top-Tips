@@ -4,6 +4,24 @@ const body = document.querySelector("body"),
       toggleIcon = document.querySelector(".toggle"),
       modeToggle = document.querySelector(".mode-switch");
 
+var targetDate = new Date("Jun 18, 2025");
+
+setInterval(function() {
+    var now = new Date();
+
+    var distance = targetDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+}, 1000);
+
 photoToggle.addEventListener("click", () => {
     iContainer.classList.toggle("close");
     toggleIcon.classList.toggle("bx-rotate-180");
@@ -106,5 +124,3 @@ const tips = [
 
 document.getElementById("daily-tip").textContent =
   tips[Math.floor(Math.random() * tips.length)];
-
-
